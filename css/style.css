@@ -949,7 +949,7 @@ html, body{
 
 .testimonials__dots button{
     font-size: 0;
-    border-color: transparent;
+    backgrond: transparent;
     width: 30px;
     height: 30px;
     display: flex;
