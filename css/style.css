@@ -21,24 +21,7 @@ html, body{
     height: 100%;
 }
 
-.overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.349);
-    z-index: 4;
-    visibility: hidden;
-    opacity: 0;
-    transition: all .3s;
-}
 
-
-.overlay--show{
-    opacity: 1;
-    visibility: visible;
-}
 
 .burger{
     display: none;
@@ -1423,6 +1406,11 @@ html, body{
     justify-content: space-between;
 }
 .questions__img {
+    min-width: 350px;
+}
+.questions__img img {
+    height: 100%;
+    width: 100%;
 }
 .questions__content {
     margin-left: 30px;
@@ -1586,6 +1574,7 @@ html, body{
     text-transform: uppercase;
     margin-bottom: 12px;
     white-space: nowrap;
+    pointer-events: none;
 }
 .footer__top-col:last-child .footer__top-title{
     white-space: normal;
@@ -1743,6 +1732,25 @@ html, body{
 
 
 @media (max-width: 1150px) {
+
+    .overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.349);
+        z-index: 7;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s;
+    }    
+
+    .overlay--show{
+        opacity: 1;
+        visibility: visible;
+    }
+
     .burger{
         position: fixed;
         top: 0px;
@@ -1883,6 +1891,33 @@ html, body{
     .program__image{
         display: none;
     }
+
+    /* ----------------------------------------------------------------- */
+
+    .footer__top-inner {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .footer__top-col{
+        margin-bottom: 30px;
+    }
+
+    .footer__top-col:first-child{
+        flex-basis: 100%;
+        max-width: none;
+        margin-bottom: 30px;
+    }
+
+    .footer__top-col:last-child{
+        max-width: none;
+        margin-bottom: 0;
+        flex-basis: 100%;
+    }
+
+    .footer__form-items{
+        max-width: 315px;
+    }
 }
 
 
@@ -1931,7 +1966,6 @@ html, body{
     .blog__row{
         flex-direction: column;
         margin: 0;
-        align-items: center;
     }
     .blog__item{
         padding: 0 0 30px 0;
@@ -1945,7 +1979,36 @@ html, body{
         width: auto;
         object-fit: contain;
     }
+    /* ----------------------------------------------------------------- */
+
+    .info__inner{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .info__content{
+        margin: 0 0 30px 0;
+    }
+
+
+    .info__map {
+        height: 200px;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* ----------------------------------------------------------------- */
+    
+    .questions__img {
+        display: none;;
+    }
+
+    .questions__content{
+        margin: 0;
+        width: 100%;
+    }
 }
+
 /* ================================ 780 =========================================================== */
 
 @media(max-width: 780px){
@@ -2001,6 +2064,34 @@ html, body{
     .heading__title{
         font-size: 25px;
     }
+
+    /* ------------------------------------- */
+
+    .main__about, 
+    .main__program {
+        padding: 60px 0 100px;
+    }
+
+    .main__directions,
+    .main__testimonials,
+    .main__blog,
+    .main__info {
+        padding-bottom: 100px;
+    }
+
+    .main__team{
+        padding: 120px 0 100px;
+    }
+
+    .main__companies{
+        padding-bottom: 40px;
+    }
+
+    .main__questions {
+        padding-bottom: 40px;
+    }
+
+    /* ------------------------------------- */
     .about__text{
         margin-bottom: 30px;
     }
@@ -2015,6 +2106,9 @@ html, body{
     }
     .about__btn {
         margin: 0 0 30px 0;
+    }
+    .about__btn:last-child {
+        margin: 0;
     }
 
     /* ------------------------------------- */
@@ -2076,6 +2170,60 @@ html, body{
         margin-bottom: 30px;
     }
 
+    /* ----------------------------------------------------------------- */
+
+    .questions__form-row{
+        flex-direction: column;
+    }
+
+    .questions__form-label{
+        margin: 0 0 24px 0;
+    }
+    .questions__form-label:last-child{
+        margin: 0 0 0 0;
+    }
+
+    .questions__form-input, 
+    .questions__form-text{
+        margin-top: 0;
+    }
+
+    .questions__form-label, 
+    .questions__text-label{
+        font-size: 14px;
+    }
+
+    .questions__checkbox-label{
+        margin: 0 0 24px 0;
+    }
+
+
+    /* ----------------------------------------------------------------- */
+
+    .footer__top-inner{
+        flex-direction: column;
+    }
+    .footer__top-title--slide{
+        margin: 0;
+        pointer-events: auto;
+    }
+
+    .footer__top-list{
+        margin-top: 12px;
+        display: none;
+    }
+
+    .footer__bottom-inner{
+        flex-direction: column-reverse;
+    }
+
+    .footer__go-top{
+        margin-bottom: 15px;
+    }
+
+    .footer__copy{
+        text-align: center;
+    }
 }
 /* ================================ 500 =========================================================== */
 
@@ -2123,5 +2271,14 @@ html, body{
 
     .companies__grid{
         grid-template: repeat(6, auto) / repeat(2, 1fr);
+    }
+    
+/* ----------------------------------------------------------------- */
+
+    .info__socials-item {
+        margin-right: 15px;
+    }
+    .info__socials-item:last-child {
+        margin-right: 0;
     }
 }
